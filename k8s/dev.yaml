@@ -15,15 +15,13 @@ spec:
     spec:
       containers:
         - name: api
-          image: devops-platform-api:local
+          image: ghcr.io/ursalaan/devops-platform-3env:latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8000
           env:
             - name: ENVIRONMENT
               value: "dev"
-            - name: VERSION
-              value: "local"
           readinessProbe:
             httpGet:
               path: /health

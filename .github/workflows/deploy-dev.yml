@@ -18,8 +18,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-            - name: Deploy image to dev
-  run: |
-    kubectl -n dev set image deployment/api api=ghcr.io/ursalaan/devops-platform-3env:${{ github.event.workflow_run.head_sha }}
-    kubectl -n dev set env deployment/api VERSION=${{ github.event.workflow_run.head_sha }}
-    kubectl -n dev rollout status deployment/api
+      - name: Deploy image to dev
+        run: |
+          kubectl -n dev set image deployment/api api=ghcr.io/ursalaan/devops-platform-3env:${{ github.event.workflow_run.head_sha }}
+          kubectl -n dev set env deployment/api VERSION=${{ github.event.workflow_run.head_sha }}
+          kubectl -n dev rollout status deployment/api

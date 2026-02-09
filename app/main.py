@@ -3,7 +3,7 @@ import os
 
 app = FastAPI()
 
-VERSION = os.getenv("VERSION", "dev")
+VERSION = os.getenv("VERSION", "unknown")
 ENV = os.getenv("ENVIRONMENT", "dev")
 
 
